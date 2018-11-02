@@ -1,16 +1,22 @@
 ﻿using Study.Xamarin.Data;
 using Study.Xamarin.Entities;
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
+
 using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
 
 namespace Study.Xamarin
 {
-    public partial class MainPage : ContentPage
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class PrincipalPageDetail : ContentPage
     {
         private readonly IContatoRepository _contatoRepository;
 
-        public MainPage()
+        public PrincipalPageDetail()
         {
             InitializeComponent();
 
@@ -32,7 +38,7 @@ namespace Study.Xamarin
         {
             var contatoSelecionado = e.SelectedItem as Contato;
             var resposta = await DisplayAlert("Remover?", $"Tem certeza que deseja remover {contatoSelecionado.Nome}", "Sim", "Não");
-            if(resposta)
+            if (resposta)
             {
                 _contatoRepository.RemoveContato(contatoSelecionado);
                 CarregaContatos();

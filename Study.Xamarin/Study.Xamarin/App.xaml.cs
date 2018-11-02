@@ -17,7 +17,7 @@ namespace Study.Xamarin
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new MainPage());
+            MainPage = new NavigationPage(new PrincipalPage());
         }
 
         public static SQLiteConnection BD

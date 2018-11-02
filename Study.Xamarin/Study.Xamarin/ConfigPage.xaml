@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Study.Xamarin"
+             x:Class="Study.Xamarin.ConfigPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Tela de Configurações!"
+                HorizontalOptions="CenterAndExpand" />
+
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Exibir nome e sobrenome"
+                       Margin="10"
+                       VerticalOptions="Center" />
+                <Switch x:Name="exibirNomeESobrenomeSwt" Toggled="ExibirNomeESobrenomeSwt_Toggled"
+                        Margin="10" HorizontalOptions="EndAndExpand" />
+            </StackLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
