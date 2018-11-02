@@ -15,6 +15,13 @@
                 <Switch x:Name="exibirNomeESobrenomeSwt" Toggled="ExibirNomeESobrenomeSwt_Toggled"
                         Margin="10" HorizontalOptions="EndAndExpand" />
             </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Exibir DDD"
+                       Margin="10"
+                       VerticalOptions="Center" />
+                <Switch x:Name="exibirDDDSwt" Toggled="ExibirDDDSwt_Toggled"
+                        Margin="10" HorizontalOptions="EndAndExpand" />
+            </StackLayout>
 
         </StackLayout>
     </ContentPage.Content>

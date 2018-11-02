@@ -24,6 +24,8 @@ namespace Study.Xamarin
             var contato = new Contato
             {
                 Nome = txtNome.Text,
+                Sobrenome = txtSobrenome.Text,
+                DDD = txtDDD.Text,
                 Telefone = txtTelefone.Text
             };
 

@@ -33,7 +33,7 @@
         <ListView x:Name="listaContato" ItemSelected="ListaContato_ItemSelected">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <TextCell Text="{Binding Nome}" Detail="{Binding Telefone}" />
+                    <TextCell Text="{Binding Identificacao}" Detail="{Binding ContatoTelefone}" />
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>

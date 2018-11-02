@@ -9,7 +9,10 @@
                 HorizontalOptions="CenterAndExpand" />
 
             <Entry x:Name="txtNome" Placeholder="Nome"></Entry>
+            <Entry x:Name="txtSobrenome" Placeholder="Sobrenome"></Entry>
+            <Entry x:Name="txtDDD" Placeholder="DDD"></Entry>
             <Entry x:Name="txtTelefone" Placeholder="Telefone"></Entry>
+            
             <Button Text="Cadastrar" x:Name="cadastrarContato" Clicked="CadastrarContato_Clicked" />
 
         </StackLayout>

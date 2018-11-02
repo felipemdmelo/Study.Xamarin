@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Study.Xamarin.Storage;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace Study.Xamarin
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
+    [XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class ConfigPage : ContentPage
 	{
         public ConfigPage ()
@@ -25,31 +21,22 @@ namespace Study.Xamarin
 
         private void CarregarConfig()
         {
-            exibirNomeESobrenomeSwt.IsToggled = RecuperaExibirNomeESobrenomeConfig();
+            exibirNomeESobrenomeSwt.IsToggled = ConfigStorage.RecuperaExibirNomeESobrenomeConfig();
+            exibirDDDSwt.IsToggled = ConfigStorage.RecuperaExibirDDDConfig();
         }
 
         private void ExibirNomeESobrenomeSwt_Toggled(object sender, ToggledEventArgs e)
         {
             var exibirNomeESobrenome = exibirNomeESobrenomeSwt.IsToggled;
 
-            SalvaExibirNomeESobrenomeConfig(exibirNomeESobrenome);
+            ConfigStorage.SalvaExibirNomeESobrenomeConfig(exibirNomeESobrenome);
         }
 
-        private void SalvaExibirNomeESobrenomeConfig(bool exibirNomeESobrenome)
+        private void ExibirDDDSwt_Toggled(object sender, ToggledEventArgs e)
         {
-            if (Application.Current.Properties.ContainsKey("ExibirNomeESobrenome"))
-                Application.Current.Properties["ExibirNomeESobrenome"] = exibirNomeESobrenome;
-            else
-                Application.Current.Properties.Add("ExibirNomeESobrenome", exibirNomeESobrenome);
-        }
+            var exibirDDD = exibirDDDSwt.IsToggled;
 
-        private bool RecuperaExibirNomeESobrenomeConfig()
-        {
-            var rtn = false;
-            if (Application.Current.Properties.ContainsKey("ExibirNomeESobrenome"))
-                Boolean.TryParse(Application.Current.Properties["ExibirNomeESobrenome"].ToString(), out rtn);
-
-            return rtn;
+            ConfigStorage.SalvaExibirDDDConfig(exibirDDD);
         }
     }
 }
