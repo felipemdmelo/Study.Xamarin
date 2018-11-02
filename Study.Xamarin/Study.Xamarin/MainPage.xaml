@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Study.Xamarin"
+             x:Class="Study.Xamarin.MainPage"
+             Title="Aplicativo de Contatos">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <LayoutOptions x:Key="adicionarContatoBtnHorizontalOptions"
+                       Alignment="Center" />
+
+            <LayoutOptions x:Key="adicionarContatoBtnVerticalOptions"
+                       Alignment="Center"
+                       Expands="True" />
+
+            <x:Double x:Key="adicionarContatoBtnBorderWidth">5</x:Double>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <StackLayout>
+        <Label Text="Seja bem vindo!" 
+           HorizontalOptions="Center"
+           VerticalOptions="CenterAndExpand" />
+
+        <Button Text="Adicionar Novo Contato" 
+                x:Name="adicionarContatoBtn" Clicked="AdicionarContatoBtn_Clicked"
+                HorizontalOptions="{StaticResource adicionarContatoBtnHorizontalOptions}"
+                VerticalOptions="{StaticResource adicionarContatoBtnVerticalOptions}"
+                BorderWidth="{StaticResource adicionarContatoBtnBorderWidth}"
+                TextColor="Red"
+                FontSize="12" />
+
+        <ListView x:Name="listaContato" ItemSelected="ListaContato_ItemSelected">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding Nome}" Detail="{Binding Telefone}" />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+
+</ContentPage>
